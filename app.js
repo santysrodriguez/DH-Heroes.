@@ -1,19 +1,27 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 const port = 3030;
+//console.log(__dirname);
+app.get('/',(req,res) => res.sendFile(path.join(__dirname, 'views','index.html' )));
+app.get('/babbage',(req,res) => res.sendFile(path.join(__dirname, 'views','babbage.html' )));
+app.get('/berners-lee',(req,res) => res.sendFile(path.join(__dirname, 'views','berners-lee.html' )));
+app.get('/clarke',(req,res) => res.sendFile(path.join(__dirname, 'views','clarke.html' )));
+app.get('/hamilton',(req,res) => res.sendFile(path.join(__dirname, 'views','hamilton.html' )));
+app.get('/hopper',(req,res) => res.sendFile(path.join(__dirname, 'views','hopper.html' )));
+app.get('/lovelace',(req,res) => res.sendFile(path.join(__dirname, 'views','lovelace.html' )));
+app.get('/turing',(req,res) => res.sendFile(path.join(__dirname, 'views','turing.html' )));
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => console.log('Server running in http://localhost:' +  port))
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Heroes</title>
-</head>
-<body>
-    <h1>Heroes</h1>
-</body>
-</html>
